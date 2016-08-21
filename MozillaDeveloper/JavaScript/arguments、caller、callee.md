@@ -24,9 +24,9 @@ aCaller();
 当函数被调用时，arguments.callee会指向自身，就是自己的引用，一般会用于递归。
 ```js
 function sub(num){
-  if(num < 1)
-  return 0;
-  num +=arguments.callee(num-1);
+  if(num > 0){
+    num +=arguments.callee(num-1);
+  }
   return num;
 }
 ```
